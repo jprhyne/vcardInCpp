@@ -11,4 +11,4 @@ vCard (Install in the credits section)
 I used the vCard c++ library from Ivanenko found at: https://github.com/ivanenko/vCard
 I also used pugixml source file by Zeux found at: https://github.com/zeux/pugixml
 # Compilation
-After downloading and installing the vcard library, run `make` and then `./vcardInCpp`
+After downloading and installing the vcard library, run `make` and then `./vcardToXML`
