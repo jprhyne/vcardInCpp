@@ -5,10 +5,10 @@ by the purple plugin List Handler
 ```
 g++
 make
-vCard (Install in the credits section)
 ```
 # Credits
-I used the vCard c++ library from Ivanenko found at: https://github.com/ivanenko/vCard
 I also used pugixml source file by Zeux found at: https://github.com/zeux/pugixml
 # Compilation
 After downloading and installing the vcard library, run `make` and then `./vcardToXML`
+# TODO
+Write my own parser for vcf files as none work that I have found
