@@ -9,6 +9,8 @@ make
 # Credits
 I also used pugixml source file by Zeux found at: https://github.com/zeux/pugixml
 # Compilation
-After downloading and installing the vcard library, run `make` and then `./vcardToXML`
+```
+make && ./vcardToXML
+```
 # TODO
 Write my own parser for vcf files as none work that I have found
