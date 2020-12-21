@@ -12,14 +12,39 @@
  */
 
 /**
- * Since we only care about
+ * Since we only care about the specific vcard file created by evolution
+ * for contacts, we will use a struct with a set amount of fields instead
+ * of a dictionary. This is a lazy choice but works with this particular
+ * use case
  */
 typedef struct vCard {
-	string name;
-	string phoneNumber;
+  // Name of the contact (Full Name).
+  std::string name;
+  // Phone number of contact
+  std::string phoneNumber;
 } vCard;
 
+/**
+ * Linked List implementation
+ */
 typedef struct Node {
+  // pointer to the "next" node in the list
 	Node *next;
-
+  // The data being stored 
+  vCard data;
 } Node;
+
+/**
+ * Our linked list. Head is the first Node in the list.
+ * A list is empty if and only if head == std::nullptr && size == 0
+ */
+typedef struct LinkedList {
+  Node *head;
+  int size;
+} LinkedList;
+
+// Function that creates our List from a given file
+
+
+
+//Function that destroys our list (since we malloc the memory)
