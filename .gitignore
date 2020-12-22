@@ -4,5 +4,5 @@ vcardToXML
 *.vcf
 *.exe
 .settings/
-.cproject/
-.project/
+.cproject
+.project
