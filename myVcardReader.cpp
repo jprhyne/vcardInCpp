@@ -50,8 +50,12 @@ typedef struct LinkedList {
 
 void destroyNode(Node* nodeToDestroy)
 {
+  if (nodeToDestroy == nullptr)
+    //This means the initial call used a null pointer
+    return;
 	if (nodeToDestroy->next != nullptr)
 		destroyNode(nodeToDestroy->next);
+  std::free(nodeToDestroy->next);
 	std::free(nodeToDestroy->data);
 }
 
@@ -89,8 +93,20 @@ LinkedList *buildFile(std::string filename)
 				//Failure case. Terminate after freeing our memory
 				destroyLinkedList(vCardList);
 			}
+      int count = 0;
+      std::string vcardLine;
+      std::getline(file, vcardLine);
+      while (count <= 100 && vcardLine != "END:VCARD") {        
+        //we must read in the line and check if it is one of the two that we need
+        if (vcardLine.substr(0, 2) == "FN") {
+          // Full name of contact
+        } else if (vcardLine.substr(0,3) == "TEL") {
+          // This line 
+        }
+        count++;
+        std::getline(file, vcardLine);
+      }
 			//malloc
-			std::string a;
 		}
 	}
 	return vCardList;
