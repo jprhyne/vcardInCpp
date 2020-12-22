@@ -3,3 +3,6 @@
 vcardToXML
 *.vcf
 *.exe
+.settings/
+.cproject/
+.project/
