@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-I ./include/ -std=c++11
+CFLAGS=-I ./include/ -std=c++11 -g
 
 all: pugixml.o vcardToXML.o myVcardReader.o
 	$(CC) -o vcardToXML pugixml.o vcardToXML.o myVcardReader.o $(CFLAGS)

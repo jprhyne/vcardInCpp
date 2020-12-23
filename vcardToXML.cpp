@@ -30,8 +30,9 @@ int main()
     if (response != "y" && response != "Y") {
       exit(EXIT_SUCCESS);
     }
+  }
     // At this point we assume that the vcard file is valid
     // Read in the vCard file
     buildFromFile(vcfFile);
-  }
+  
 }

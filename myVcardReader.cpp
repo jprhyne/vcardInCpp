@@ -86,6 +86,7 @@ LinkedList *buildFromFile(std::string filename)
 			}
 			//malloc
 		}
+    std::cout << "File done\n";
 	}
 	return vCardList;
 
