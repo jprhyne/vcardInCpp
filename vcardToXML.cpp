@@ -1,26 +1,37 @@
 #include "pugixml.hpp"
-#include <iostream>
-#include <string>
-#include <stdlib.h>
+#include "myVcardReader.hpp"
 
-//This is probably bad practice but is easier since we mostly use
-//std operations
-using namespace std;
+#ifndef IOSTREAM
+#define IOSTREAM
+#include <iostream>
+#endif
+
+#ifndef STRING
+#define STRING
+#include <string>
+#endif
+
+#ifndef STDLIB
+#define STDLIB
+#include <stdlib.h>
+#endif
+
 
 int main()
 {
-  cout << "Type file path to vcf file containing your contacts.\n";
-  string vcfFile;
-  getline(cin, vcfFile);
+  std::cout << "Type file path to vcf file containing your contacts.\n";
+  std::string vcfFile;
+  std::getline(std::cin, vcfFile);
   // Now we check if the passed file has the correct extension
   if (vcfFile.rfind(".vcf") == vcfFile.npos) {
-    cout << "File does not have the proper extension.\nDo you still want to use this as a vCard file? (y/[n])";
-    string response;
-    getline(cin, response);
+    std::cout << "File does not have the proper extension.\nDo you still want to use this as a vCard file? (y/[n])";
+    std::string response;
+    std::getline(std::cin, response);
     if (response != "y" && response != "Y") {
       exit(EXIT_SUCCESS);
     }
     // At this point we assume that the vcard file is valid
     // Read in the vCard file
+    buildFromFile(vcfFile);
   }
 }
