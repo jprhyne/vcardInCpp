@@ -14,9 +14,9 @@ myVcardReader.o:
 	$(CC) -c -o myVcardReader.o myVcardReader.cpp $(CFLAGS)
 	
 cleanall:
-	rm -f *.o
+	rm -f *.o *.xml vcardToXML
 
 clean:
 	mv pugixml.o pugixml.bak
-	rm -f *.o
+	rm -f *.o *.xml vcardToXML
 	mv pugixml.bak pugixml.o

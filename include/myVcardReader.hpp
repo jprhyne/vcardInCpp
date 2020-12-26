@@ -31,7 +31,11 @@ typedef struct vCard {
   std::string name;
   // Phone number of contact
   std::string phoneNumber;
-} vCard;
+  //Constructor
+  vCard();
+  vCard(std::string name, std::string phoneNumber);
+  vCard(const vCard &v2) {name = v2.name; phoneNumber=v2.phoneNumber;}
+}vCard;
 
 /**
  * Linked List implementation
@@ -41,6 +45,9 @@ typedef struct Node {
 	Node *next;
   // The data being stored
 	vCard *data;
+
+  Node(Node *nextNode, vCard *newData);
+  Node(const Node &n2) {next=n2.next; data=n2.data;}
 } Node;
 
 /**
@@ -52,7 +59,10 @@ typedef struct Node {
  */
 typedef struct LinkedList {
   Node *head;
+  Node *tail;
   int size;
+
+  void add(vCard);
 } LinkedList;
 
 void destroyLinkedList(LinkedList *name); //def in myVcardReader.cpp
