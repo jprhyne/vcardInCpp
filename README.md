@@ -1,6 +1,6 @@
 # vcardInCpp
 This program provides a command line interface to read in a vCard file, and either create a new xml file or appends the data to an existing xml file used
-by the purple plugin List Handler
+by the purple plugin List Handler (Currently have to create a new xml. Further functionality is in progress)
 # Requirements
 ```
 g++
@@ -25,3 +25,4 @@ Compilation: https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-
 Visual Studio: https://visualstudio.microsoft.com/vs/features/cplusplus/
 # TODO
 Find out why there is a memory leak for `./vcardToXML` with valid vcf file (7 nodes)
+Add support for existing xml files
